@@ -43,5 +43,7 @@ broken. There are three ways to fix it:
 2) Make the state variable immutable; or 
 3) Use synchronization whenever accessing the state variable
 
+A class is 'THREAD SAFE' when it continues to behave correctly when accessed from 
+multiple threads. 
 
  */
