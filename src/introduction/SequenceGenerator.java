@@ -1,6 +1,12 @@
 package introduction;
-
-
+/*
+ Small Note on Atomic Package
+ Its a small toolkit of classes that support lock-free thread-safe programming on single variables. In essence, the classes in this
+ package extend the notion of volatile values, fields, and array elements to those that also provide an atomic conditional 
+ update operation of the form:
+ boolean compareAndSet(expectedValue, updateValue);
+ 
+*/
 public class SequenceGenerator 
 {
     private int value;
@@ -13,7 +19,7 @@ public class SequenceGenerator
         return value++;
     }
   //Stage 2:Thread Safe sequence
-    public int getNext2() {
+    synchronized public int getNext2() {
         return value++;
     }
 }
