@@ -47,7 +47,11 @@ public class ImmutablityCheck
 	    ALL THE ITEMS IN THE COLLECTIONS AS WELL. Hence only coping the state won't work here in case of collection as you can see in 
 	    getImmutableList. 
 	  7)In order to solve the problem we faced in step 6 we have to perform deep copy of all the collection as we can see in get
-	   getImmutableModifiedList.          
+	   getImmutableModifiedList. 
+	  8)Still this method is prone to be mutable is one situation.......
+	   Suppose if we override this method in ImmutabilityBreak and in that overriding method if we returned mutable list then?
+	   Yes ..Its true..this method is still prone to be mutable.Solution for this is either make this method final or don't expose any method
+	   to subclass which breaks encapsulation like getImmutableList() which can gets called from overriding getImmutableModifiedList().           
 	    
 	*/
 	public ImmutablityCheck(int id,String name)
@@ -185,6 +189,11 @@ class ImmutabilityBreak extends ImmutablityCheck
 	public void setName(String name)
 	{
 		//super.name=name; //you can't do that,Since variable is private hence it is not visible within this object. 
+	}
+	@Override
+	public List<Point> getImmutableModifiedList() {
+		// TODO Auto-generated method stub
+		return getImmutableList(); //breaking the encapsulation.
 	}
 }
 class Address 
