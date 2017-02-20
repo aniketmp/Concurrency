@@ -7,3 +7,17 @@ Sequence of programs to be refereed..
 6)MutableInteger
 7)ThisEscape
 8)MonitorVehicalTracker
+9)DelegatingVehicalTracker
+10)ImmutabilityCheck
+11)ConcurrentModificationException
+12)ThreadId
+13)PutIfAbsent
+14)Memorizer
+15)AdvancedMemorizer
+16)DinningPhilosopherProblem
+17)SingleThreadWebServer
+18)ThreadPerTaskWebServer
+19)TaskExecutionWebServer
+20)LifecycleWebServer
+21)SingleThreadRenderer
+22)ThreadInterruption
