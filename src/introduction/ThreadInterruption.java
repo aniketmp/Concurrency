@@ -23,7 +23,8 @@ class MyThread extends Thread
 		{
 			try {
 				System.out.println("Sleeping...");
-				sleep(20000);
+				//if(1==2)  			//If the thread is not holding lock then it cannot be interrupted.
+					sleep(20000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				System.out.println("Interrupted by "+Thread.currentThread().getName());
@@ -34,6 +35,8 @@ class MyThread extends Thread
 	}
 	public void cancel()
 	{
-		interrupt();
+		interrupt(); //interrupt method interrupts the target thread, and isInterrupted returns the interrupted status of the target thread.
+					 //The poorly named static interrupted method clears the interrupted status of the current thread and returns its
+		             //previous value; this is the only way to clear the interrupted status. 
 	}
 }
